@@ -117,8 +117,8 @@ console.log('Users with age 25 or 26:', usersWithAge25Or26);
     <li>This implementation is intended for small to medium-sized datasets. For larger datasets, consider using a more robust database solution.</li>
 </ul>
 
-<h2>License</h2>
+<!-- <h2>License</h2> -->
 
-<p>This project is licensed under the MIT License.</p>
+<!-- <p>This project is licensed under the MIT License.</p> -->
 </body>
 </html>
