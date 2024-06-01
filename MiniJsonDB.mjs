@@ -86,10 +86,6 @@ class MiniJsonDB {
         return this.read(collection, query);
     }
 
-    findAllByQuery(collection, query) {
-        return this.read(collection, query);
-    }
-
     findAllByConditions(collection, conditions) {
         if (!this.data[collection]) {
             return [];

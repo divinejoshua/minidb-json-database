@@ -13,10 +13,14 @@
 
 <p>To use MiniJsonDB, simply download or clone the repository and import the class into your project.</p>
 
-<pre><code>git clone &lt;repository-url&gt;
+<pre><code>git clone https://github.com/divinejoshua/minidb-json-database
 </code></pre>
 
 <h2>Usage</h2>
+
+<h3>Create an empty json file</h3>
+<p>Call the file <code>`database.json`</code>
+<p>Ensure the JSON file has valid JSON content. An empty file should contain <code>{}</code>.</p>
 
 <h3>Importing the MiniJsonDB</h3>
 
@@ -71,8 +75,12 @@ const usersNamedAlice = db.read('users', { name: 'Alice' });
 
 <pre><code>const usersNamedAlice = db.findAll('users', { name: 'Alice' });
 </code></pre>
+ Or try this for multiple queries (AND)
+<pre><code>const usersNamedAlice = db.findAll('users', { name: 'Alice',  age : 25});
+</code></pre>
 
-<h3>Finding All Records with Complex Conditions</h3>
+
+<h3>Finding All Records with Complex Conditions (OR)</h3>
 
 <p>For more complex queries, you can use the <code>findAllByConditions</code> method. This method accepts a function that defines the conditions.</p>
 
@@ -95,10 +103,6 @@ db.create('users', { name: 'Bob', age: 30 });
 db.create('users', { name: 'Mike', age: 28 });
 db.create('users', { name: 'Alice', age: 35 });
 db.create('users', { name: 'Alice', age: 25 });
-
-// Find all users named Alice who are 25 years old
-const allAlices = db.findAllByQuery('users', { name: 'Alice', age: 25 });
-console.log('All Alices aged 25:', allAlices);
 
 // Find users with age 25 or 26
 const usersWithAge25Or26 = db.findAllByConditions('users', user =&gt; user.age === 25 || user.age === 26);
